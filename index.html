@@ -1,13 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>paintJS</title>
+
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;600&family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  <script defer src="main.js"></script>
+
+  <title>JS CANVAS</title>
 </head>
 <body>
-  <script src="app.js"></script>
+
+  <!-- 캔버스영역 -->
+  <canvas id="jsCanvas"></canvas>
+
+  <!-- 컨트롤요소들 -->
+  <div class="controls">
+    <!-- 버튼들 -->
+    <div class="controls__btn">
+      <button id="jsModeBtn">브러쉬</button>
+      <button id="jsSave">저장</button>
+      <button id="jsReset">새로만들기</button>
+    </div>
+
+    <!-- 브러쉬 컨트롤 -->
+    <div class="controls__brush">
+      <!-- 브러쉬 굵기 -->
+      <div class="brush__range">
+        <label for="range">브러쉬 굵기</label>
+        <input type="range" class="control__range" id="jsRange" name="range"
+        value="5" min="1" max="10" step="1">
+      </div>
+      <!-- 브러쉬 컬러 -->
+      <div class="brush__colors">
+        <div class="color jsColor" style="background-color: #2c2c2c;"></div>
+        <div class="color jsColor" style="background-color: #e62e00;"></div>
+        <div class="color jsColor" style="background-color: #ff9d2e;"></div>
+        <div class="color jsColor" style="background-color: #ffee2e;"></div>
+        <div class="color jsColor" style="background-color: #00b33c;"></div>
+        <div class="color jsColor" style="background-color: #1ad1ff;"></div>
+        <div class="color jsColor" style="background-color: #0033cc;"></div>
+        <div class="color jsColor" style="background-color: #6600cc;"></div>
+        <div class="color jsColor" style="background-color: #ffffff;"></div>
+        <div class="colorpicker-wrap">
+          <div class="color colorpicker-bg" id="CP__bg"></div>
+          <input type="color" class="color colorpicker" id="CP" value="#eeeeee">
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </body>
 </html>

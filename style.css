@@ -1,0 +1,140 @@
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 0;
+  background-color: #ececec;
+  font-family: 'Gothic A1', 'Montserrat', sans-serif;
+}
+
+/* 캔버스영역 */
+canvas {
+  width: 600px;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: crosshair;
+}
+
+/* 컨트롤요소들 */
+.controls {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 20px 0;
+}
+
+/* 버튼들 */
+.controls__btn {
+}
+
+.controls__btn button {
+  display: block;
+  width: 100px;
+  padding: 4px 8px;
+  margin-bottom: 4px;
+  font-family: 'Gothic A1', 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.controls__btn button:active {
+  transform: scale(0.97);
+}
+
+/* 브러쉬 컨트롤 */
+/* 브러쉬 굵기 */
+.controls__brush {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brush__range {
+  margin: 5px 0 20px;
+}
+
+.brush__range label {
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.brush__range input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 8px;
+  border-radius: 4px;
+  cursor: ew-resize;
+}
+
+.brush__range input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 20px;
+  border-radius: 8px;
+  background-color: #28a2ff;
+}
+
+/* 브러쉬 컬러 */
+.brush__colors {
+  display: flex;
+}
+
+.brush__colors .color {
+  width: 40px;
+  height: 40px;
+  margin: 0 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* 컬러픽커 */
+/* 컬러휠 만들고 그 밑에 컬러픽커를 두었다가 컬러휠 클릭시 컬러픽커 z-index 변경 */
+.brush__colors .colorpicker-wrap {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.brush__colors .colorpicker-bg {
+  position: absolute;
+  background-image: url(./images/colorwheel.png);
+  background-size: contain;
+}
+
+.brush__colors .colorpicker {
+  position: absolute;
+  z-index: -1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+}
+
+.brush__colors input[type="color"] {
+  padding: 0;
+}
+
+.brush__colors .colorpicker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.brush__colors .colorpicker::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
